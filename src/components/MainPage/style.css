@@ -1,0 +1,124 @@
+.main-container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.content-left{
+    display: flex;
+    justify-content: center;
+    background-image: url('../../images/images/background_image.png');
+    height: 100%;
+    width: 40%;
+    /* border: red 2px solid; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:rgba(150, 102, 222, 0.918);
+}
+
+.content-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-right{
+    height: 100%;
+    width: 60%;
+    /* border: solid yellow 2px; */
+}
+
+.logo{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    margin-top: 260px;
+}
+
+.text-left-side{
+    color:white;
+    font-size: 14px;
+    margin-top: 405px;
+    text-align: center;
+}
+
+.motion {
+    position: absolute;
+    margin-top: 335px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+.buttons{
+    
+    width: 260px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+    height: 30px;
+    width: 120px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background: transparent;
+    margin-top: 500px;
+    cursor: pointer;
+    background-image: url('../../images/images/svgs/apple.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    outline: none;
+}
+.button-2{
+    height: 30px;
+    width: 120px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background: transparent;
+    margin-top: 500px;
+    cursor: pointer;
+    background-image: url('../../images/images/svgs/google.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.social-buttons{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    margin-top: 700px;
+
+}
+
+.twitter-button{
+    height: 35px;
+    cursor: pointer;
+    color:transparent;
+}
+
+.instagram-button{
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    color: yellow;
+}
+
+.facebook-button{
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
