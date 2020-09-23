@@ -6,6 +6,7 @@ import MainPage from './components/MainPage'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MotionPage from './components/MotionPage';
+import Registration from './components/Registration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
       < Switch>
         <Route exact={true} path="/" component={MainPage} />
         <Route exact={true} path="/MotionPage" component={MotionPage} />
+        <Route exact={true} path="/Reagistration" component={Registration} />
       </Switch>
     </Router>
   </React.StrictMode>,

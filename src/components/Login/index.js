@@ -1,7 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './style.css'
-import PASSWORD from '../../images/images/svgs/password.svg'
 
 class Login extends React.Component {
 
@@ -51,18 +50,29 @@ class Login extends React.Component {
 
     }
 
+    getRegistration = () => {
+        console.log("works")
+    }
+
     render() {
 
         return (
 
+
             <div className="container-login">
+                <div className="sign-up-container">
+                    <span className="no-accout-text">Don't have an account?</span>
+                    <Link to="/Reagistration"><button className="sign-up-button" onClick={this.getRegistration}>Sign Up</button></Link>
+                </div>
                 <h1 className="sign-in">Sign In</h1>
                 <i class="fas fa-user" id="username"></i>
                 <input onChange={this.emailOnChangeHandler} type="text" placeholder="username"></input>
                 <hr className="line"></hr>
-                <img className="password" src={PASSWORD}></img><input onChange={this.passwordOnChangeHandler} type="password" placeholder="password" ></input>
+                <i class="fas fa-lock" id="psw"></i>
+                <input onChange={this.passwordOnChangeHandler} type="password" placeholder="password" ></input>
                 <button className="button-login" onClick={this.getLogin}>Log In</button>
             </div >
+
         )
     }
 }

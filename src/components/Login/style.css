@@ -45,8 +45,38 @@ input{
     margin-bottom: 300px;
 }
 
-.password{
+#psw{
     position: absolute;
-    margin-right: 200px;
-    margin-top: 20px;
+    margin-right: 230px;
+    margin-top: 40px;
+    color: rgb(165, 118, 251);
+} 
+
+.sign-up-container{
+    position: absolute;
+    /* border: red 2px solid; */
+    height: 100px;
+    width: 300px;
+    margin-bottom: 820px;
+    margin-left: 660px;
+}
+
+.sign-up-button{
+    margin-left: 20px;
+    border-radius: 35px;
+    width: 100px;
+    height: 30px;
+    border: solid 2px rgba(128, 128, 128, 0.295);
+    /* background-color: rgb(165, 118, 251); */
+    cursor: pointer;
+    outline:none;
+    background-color: transparent;
+}
+
+.sign-up-button:hover{
+    border: rgb(165, 118, 251) solid 1px;
+}
+
+.no-accout-text{
+    font-size: 14px;
 }
