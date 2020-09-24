@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import store from '../../store';
+import { connect } from 'react-redux';
 import './style.css'
 
 class Login extends React.Component {
@@ -40,7 +42,9 @@ class Login extends React.Component {
             .then((data) => {
                 console.log("in the fatch", data)
                 if (data.access) {
-                    console.log("in the props", this.props)
+                    const token = data.access;
+                    this.props.dispatch({ type: "GET_TOKEN", payload: token });
+                    // console.log("in the props", this.props)
                     this.props.history.push("/MotionPage");
 
                 }
@@ -77,4 +81,11 @@ class Login extends React.Component {
     }
 }
 
-export default withRouter(Login);
+const mapStateToProps = (state) => {
+    console.log("in my token", state)
+    return {
+        token: state.token,
+    }
+}
+
+export default connect(mapStateToProps)(withRouter(Login));
