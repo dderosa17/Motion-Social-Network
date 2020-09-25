@@ -1,10 +1,10 @@
 import React from 'react'
 import './style.css'
-import Logo from '../../images/images/logo_white.png'
-import Twitter from '../../images/images/svgs/twitter_icon.svg'
-import Facebook from '../../images/images/svgs/facebook_icon.svg'
-import Instagram from '../../images/images/svgs/instagram_icon.svg'
-import Login from '../Login'
+import Logo from '../../images/images/logo_white.png';
+import Twitter from '../../images/images/svgs/twitter_icon.svg';
+import Facebook from '../../images/images/svgs/facebook_icon.svg';
+import Instagram from '../../images/images/svgs/instagram_icon.svg';
+import Login from '../Login';
 
 class MainPage extends React.Component {
 

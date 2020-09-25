@@ -187,9 +187,9 @@ export const FollowButton = styled.button`
 
 
 export const ContainerAllItems = styled.section`
-    height:100%;
-    width:100%;
-    // border: 2px solid red;
+    height:130vh;
+    // width:100%;
+    // border: 2px solid red;  
     background-color:#F2F2F2;
 `
 

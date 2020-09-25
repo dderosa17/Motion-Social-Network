@@ -30,9 +30,11 @@ import FRIENDSLOGO from '../../images/images/svgs/icon-friends.svg';
 import BELL from '../../images/images/svgs/notification_bell.svg';
 import IMGPROFILE from '../../images/images/users/jennifer.png';
 import MENU from '../../images/images/svgs/menu.svg';
-import ICONSEARCH from '../../images/images/svgs/search_icon.svg'
+import ICONSEARCH from '../../images/images/svgs/search_icon.svg';
 import { connect } from 'react-redux';
 
+
+import Posts from '../PostsMotion';
 
 
 // import * as myStyle from './style'
@@ -99,6 +101,7 @@ class MotionPage extends React.Component {
                     </SectionButtons>
                 </SecondNav>
                 <ContainerAllItems>
+                    <Posts />
                 </ContainerAllItems>
             </MainContainer >
         )
@@ -106,7 +109,7 @@ class MotionPage extends React.Component {
 }
 
 const mapStateToPros = (state) => {
-    // console.log("in this posts:", state.posts);
+    console.log("in this posts:", state.token);
     return {
         token: state.token,
         posts: state.posts

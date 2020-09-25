@@ -7,9 +7,17 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MotionPage from './components/MotionPage';
 import Registration from './components/Registration';
+import Posts from './components/PostsMotion'
 import { Provider } from 'react-redux';
 import store from '../src/store';
 
+const token = localStorage.getItem("token")
+if (token) {
+  store.dispatch({
+    type: "GET_TOKEN",
+    payload: token,
+  })
+}
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
@@ -18,12 +26,15 @@ ReactDOM.render(
           <Route exact={true} path="/" component={MainPage} />
           <Route exact={true} path="/MotionPage" component={MotionPage} />
           <Route exact={true} path="/Reagistration" component={Registration} />
+          <Route exact={true} path="/Posts" component={Posts} />
         </Switch>
       </Router>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
