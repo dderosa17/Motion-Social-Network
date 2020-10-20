@@ -1,5 +1,5 @@
-import React from 'react'
-import { MainContainer } from './style';
+import React from 'react';
+import { Logout, MainContainer } from './style';
 import { Navbar } from './style';
 import { Logo } from './style';
 import { SectionLogo } from './style';
@@ -24,17 +24,57 @@ import { LikedButton } from './style';
 import { FriendsButton } from './style';
 import { FollowButton } from './style';
 import { LineUnderPosts } from './style';
+import { ContentFriends } from "./style";
+import { MainContentInfoFriends } from "./style";
+import { LoginProfileSecontion } from "./style";
+import { Profile } from "./style";
+import { logout } from "./style";
 import MOTIONLOGO from '../../images/images/logo.png';
 import POSTLOGO from '../../images/images/posts_logo.png';
 import FRIENDSLOGO from '../../images/images/svgs/icon-friends.svg';
 import BELL from '../../images/images/svgs/notification_bell.svg';
-import IMGPROFILE from '../../images/images/users/jennifer.png';
+import AVATAR from '../../images/images/users/jennifer.png';
 import MENU from '../../images/images/svgs/menu.svg';
 import ICONSEARCH from '../../images/images/svgs/search_icon.svg';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
+import "./style"
 
-class MotionPage extends React.Component {
+
+class Friends extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            showProfileLogin: false
+        }
+    }
+
+    stateTest = [1, 2, 3, 4, 5, 6];
+
+    handleProfileLogin = () => {
+        this.setState({
+            showProfileLogin: !this.state.showProfileLogin
+        })
+    }
+
+    componentDidMount = () => {
+
+        const config = {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAzMTg5Nzc5LCJqdGkiOiJjNWNjYjhjOTlkMDM0OTJiOGY4ZGVjNDcwYjI5NzAxZSIsInVzZXJfaWQiOjE2fQ.fWPW8BULXvqJ6wb8kyVZsxdpuof9z5eJMps4nohf_NE",
+                "Content-Type": "application/json"
+            }
+        }
+
+        fetch("https://motion.propulsion-home.ch/backend/api/social/friends/", config)
+            .then(response => response.json())
+            .then(data => {
+
+                this.props.dispatch({ type: "GET_FRIENDS", paylod: data })
+            })
+    }
 
     render() {
         return (
@@ -42,7 +82,7 @@ class MotionPage extends React.Component {
                 <Navbar>
                     <SectionLogo>
                         <Logo src={MOTIONLOGO} />
-                        <Link to="/MotionPage"><MotionText>Motion</MotionText></Link>
+                        <MotionText>Motion</MotionText>
                     </SectionLogo>
                     <SectionPostFriends>
                         <PostLogo src={POSTLOGO}></PostLogo>
@@ -54,7 +94,15 @@ class MotionPage extends React.Component {
                     <SectionProfileNot>
                         <Bell src={BELL}></Bell>
                         <DivNotification>3</DivNotification>
-                        <ImgProfile src={IMGPROFILE}></ImgProfile>
+                        <ImgProfile src={AVATAR} onClick={this.handleProfileLogin}></ImgProfile>
+
+                        {this.state.showProfileLogin ?
+                            <LoginProfileSecontion>
+                                <Link to="/profile" style={{ textDecoration: "none", color: "black" }}><Profile><i class="fas fa-user-circle" style={{ marginLeft: "15%", marginRight: "8%" }}></i><span>Profile</span></Profile></Link>
+                                <Link to="/" style={{ textDecoration: "none", color: "black" }}><Logout><i class="fas fa-sign-out-alt" style={{ marginLeft: "15%", marginRight: "8%" }}></i>Logout</Logout></Link>
+                            </LoginProfileSecontion>
+                            : null
+                        }
                         <Menu src={MENU}></Menu>
                     </SectionProfileNot>
                 </Navbar>
@@ -70,18 +118,28 @@ class MotionPage extends React.Component {
                     </SectionButtons>
                 </SecondNav>
                 <ContainerAllItems>
-                </ContainerAllItems>
-            </MainContainer>
-        )
-    };
-}
+                    <ContentFriends>
+                        {
+                            this.stateTest.map(elem => {
 
-const mapStateToPros = (state) => {
-    console.log("in this posts:", state.token);
-    return {
-        token: state.token,
-        posts: state.posts
+                                return < MainContentInfoFriends>Friend {elem}</MainContentInfoFriends>
+                            })
+
+                        }
+                    </ContentFriends>
+                </ContainerAllItems>
+            </MainContainer >
+        )
     }
 }
 
-export default connect(mapStateToPros)(withRouter(MotionPage))
+
+const mapStateToPros = (state) => {
+    console.log("friends setion:", state.token)
+    return {
+        token: state.token,
+        friends: state.friends
+    }
+}
+
+export default connect(mapStateToPros)(Friends)

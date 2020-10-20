@@ -44,9 +44,9 @@ class Login extends React.Component {
                 if (data.access) {
                     const token = data.access;
                     this.props.dispatch({ type: "GET_TOKEN", payload: token });
-                    // console.log("in the props", this.props)
+                    console.log("in the props", this.props)
                     localStorage.setItem("token", token)
-                    this.props.history.push("/MotionPage");
+                    this.props.history.push("/posts");
 
                 }
 

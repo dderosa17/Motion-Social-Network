@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-    width:100%;
+     width:100%;
     height:100vh;
     // border: 2px solid black;
 `
@@ -47,7 +47,7 @@ margin-left: 15%;
 `
 
 export const MotionText = styled.button`
-    margin-left:5%;
+    margin-left:1.4%;
     font-size:22px;
     border:none;
     background-color:white;
@@ -107,6 +107,7 @@ export const DivNotification = styled.div`
 
 export const ImgProfile = styled.img`
     margin-left:20%;
+    cursor:pointer;
 
 `
 
@@ -189,13 +190,72 @@ export const FollowButton = styled.button`
 
 `
 
-
-
 export const ContainerAllItems = styled.section`
+    display:flex;
+    justify-content:center;
     height:130vh;
-    width:100%;
+    // width:100%;
     // border: 2px solid red;  
     background-color:#F2F2F2;
+`
+
+export const ContentFriends = styled.section`
+    display:flex;
+    flex-wrap:wrap;
+    width:70%;
+    height:100%;
+    // border: 2px solid blue;
+
+`
+
+export const MainContentInfoFriends = styled.div`
+    height:38%;
+    width: 30%;
+    margin-left:2%;
+    margin-top:4%;
+    // border: solid 2px green;
+    background-color:white;
+`
+
+export const LoginProfileSecontion = styled.div`
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    height:auto;
+    width:9%;
+    margin-left:2%;
+    background-color:white;
+    margin-top:8%;
+    border-radius:5px;
+    border: 1px solid #c4c3c2;
+`
+
+export const Profile = styled.div`
+    display:flex;
+    align-items:center;
+    // justify-content:center;
+    height:45px;
+    margin-top:4%;
+    cursor:pointer;
+    // width:100%;
+    
+    &:hover {
+        background-color:#F2F2F2;
+    }
+
+`
+
+export const Logout = styled.div`
+    display:flex;
+    align-items:center;
+    // justify-content:center;
+    height:45px;
+    cursor:pointer;
+    margin-bottom:4%;
+    &:hover {
+            background-color:#F2F2F2;
+        }
+
 `
 
 export default styled
