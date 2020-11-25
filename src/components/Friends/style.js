@@ -51,7 +51,7 @@ export const MotionText = styled.button`
     font-size:22px;
     border:none;
     background-color:white;
-    cursor:pointer;
+    // cursor:pointer;
     outline:none;
 `
 
@@ -157,6 +157,9 @@ export const SearchIcon = styled.img`
 export const SearchField = styled.input`
     margin-left:1%;
     // border:solid red 2px;
+    background-color:transparent;
+    outline:none;
+    border:none;
     margin-top:1.5%;
   
 `
@@ -201,17 +204,19 @@ export const ContainerAllItems = styled.section`
 
 export const ContentFriends = styled.section`
     display:flex;
+    justify-content:center;
     flex-wrap:wrap;
-    width:70%;
+    width:60%;
     height:100%;
     // border: 2px solid blue;
 
 `
 
 export const MainContentInfoFriends = styled.div`
-    height:38%;
-    width: 30%;
-    margin-left:2%;
+    height:25%;
+    width: 20%;
+    margin-left:4%;
+    margin-right:4%;
     margin-top:4%;
     // border: solid 2px green;
     background-color:white;

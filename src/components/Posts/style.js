@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import coverImage from '../../images/images/COVER3.jpg'
 
 export const MainContainer = styled.div`
     width:100%;
@@ -117,75 +116,90 @@ export const Menu = styled.img`
     cursor:pointer;
 
 `
+// here starts the second navbar
+
+export const SecondNav = styled.nav`
+    display:flex;
+    align-items:center;
+    height:80px;
+    width:100%;
+    border:1px solid black;
+    background-color:#F2F2F2;
+    border-color: transparent transparent #C5CAC9 transparent;
+
+`
+
+export const SectionSearchField = styled.section`
+    display:flex;
+    align-items:center;
+    // border: 2px solid red;
+    width:75%;
+    height:100%;
+       
+       
+        
+`
+export const SectionButtons = styled.section`
+    display:flex;
+    align-items:center;
+    width:25%;
+    height:100%;
+    // border: solid 2px blue;
+
+`
+
+export const SearchIcon = styled.img`
+    margin-left:12%;
+    
+
+`
+
+export const SearchField = styled.input`
+    margin-left:1%;
+    // border:solid red 2px;
+    outline:none;
+    border:none;
+    background-color:transparent;
+    margin-top:1.5%;
+  
+`
+
+export const LikedButton = styled.button`
+    // border: solid 2px black;
+    border:none;
+    outline:none;
+    background-color:#F2F2F2;
+    cursor:pointer;
+
+`
+
+export const FriendsButton = styled.button`
+    // border: solid 2px black;
+    border:none;
+    outline:none;
+    background-color:#F2F2F2;
+    margin-left:5%;
+    cursor:pointer;
+
+`
+
+export const FollowButton = styled.button`
+    // border: solid 2px black;
+    border:none;
+    outline:none;
+    background-color:#F2F2F2;
+    margin-left:5%;
+    cursor:pointer;
+
+`
+
 
 
 export const ContainerAllItems = styled.section`
-    height:150vh;
+    height:130vh;
     width:100%;
     // border: 2px solid red;  
     background-color:#F2F2F2;
-`
-export const ConverImage = styled.section`
-    height:15%;
-    width:100%;
-    // border: 2px solid red;
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-image:url(${coverImage})
-`
-
-export const MainContentProfile = styled.section`
-        display:flex;
-        justify-content: center;
-        height:84%;
-        width:100%;
-        // border:2px solid blue;
-`
-
-export const ContentProfile = styled.section`
-        display:flex;
-        position:absolute;
-        height:35%;
-        width:61%;
-        // border:2px solid red;
-        background-color:white;
-        margin-top:8%;
-        margin-left:20%;
-        border-radius:3px;
-`
-
-export const InfoProfile = styled.div`
-    display:flex;
-    flex-direction:column
-    height:100%;
-    width:28%;
-    border:1px solid;
-    border-color: transparent rgba(195, 181, 181, 0.36) transparent transparent;
-`
-
-export const InfoProfileHobbiesAbout = styled.div`
-    display:flex;
-    height:68%;
-    width:100%;
-    border:2px solid green;
-    border:1px solid;
-    border-color: transparent  transparent rgba(195, 181, 181, 0.36) transparent;
-`
-
-export const MainInfoProfile = styled.div`
-    display:flex;
-    flex-direction:column;
-    height:100%;
-    width:100%;
-`
-
-export const GeneralInfo = styled.div`
-    display:flex;
-    height:30%;
-    width:100%;
-    // border:2px solid red;
-
 `
 
 export const LoginProfileSecontion = styled.div`
@@ -200,7 +214,7 @@ export const LoginProfileSecontion = styled.div`
     border-radius:5px;
     border: 1px solid #c4c3c2;
 `
-export const MyProfile = styled.div`
+export const Profile = styled.div`
     display:flex;
     align-items:center;
     // justify-content:center;

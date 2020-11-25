@@ -50,7 +50,7 @@ class Friends extends React.Component {
         }
     }
 
-    stateTest = [1, 2, 3, 4, 5, 6];
+    stateTest = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     handleProfileLogin = () => {
         this.setState({
@@ -95,7 +95,6 @@ class Friends extends React.Component {
                         <Bell src={BELL}></Bell>
                         <DivNotification>3</DivNotification>
                         <ImgProfile src={AVATAR} onClick={this.handleProfileLogin}></ImgProfile>
-
                         {this.state.showProfileLogin ?
                             <LoginProfileSecontion>
                                 <Link to="/profile" style={{ textDecoration: "none", color: "black" }}><Profile><i class="fas fa-user-circle" style={{ marginLeft: "15%", marginRight: "8%" }}></i><span>Profile</span></Profile></Link>

@@ -9,8 +9,8 @@ import {
     PostLogo,
     PostText, SearchField, SearchIcon, SecondNav, SectionButtons,
     SectionLogo,
-    SectionPostFriends, SectionProfileNot, SectionSearchField
-} from "../MotionPage/style";
+    SectionPostFriends, SectionProfileNot, SectionSearchField, LoginProfileSecontion, Profile, Logout
+} from "./style";
 import MOTIONLOGO from "../../images/images/logo.png";
 import { Link } from "react-router-dom";
 import POSTLOGO from "../../images/images/posts_logo.png";
@@ -21,9 +21,19 @@ import MENU from "../../images/images/svgs/menu.svg";
 import ICONSEARCH from "../../images/images/svgs/search_icon.svg";
 import ContentPosts from "../ContentPosts";
 
+
 class Posts extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            showProfileLogin: false,
+        }
+    }
+
+    handleProfileLogin = () => {
+        this.setState({
+            showProfileLogin: !this.state.showProfileLogin
+        })
     }
 
     componentDidMount = () => {
@@ -56,7 +66,7 @@ class Posts extends React.Component {
                 <Navbar>
                     <SectionLogo>
                         <Logo src={MOTIONLOGO} />
-                        <Link to="/MotionPage"><MotionText>Motion</MotionText></Link>
+                        <MotionText>Motion</MotionText>
                     </SectionLogo>
                     <SectionPostFriends>
                         <PostLogo src={POSTLOGO}></PostLogo>
@@ -68,7 +78,14 @@ class Posts extends React.Component {
                     <SectionProfileNot>
                         <Bell src={BELL}></Bell>
                         <DivNotification>3</DivNotification>
-                        <ImgProfile src={AVATAR}></ImgProfile>
+                        <ImgProfile src={AVATAR} onClick={this.handleProfileLogin}></ImgProfile>
+                        {this.state.showProfileLogin ?
+                            <LoginProfileSecontion>
+                                <Link to="/profile" style={{ textDecoration: "none", color: "black" }}><Profile><i class="fas fa-user-circle" style={{ marginLeft: "15%", marginRight: "8%" }}></i><span>Profile</span></Profile></Link>
+                                <Link to="/" style={{ textDecoration: "none", color: "black" }}><Logout><i class="fas fa-sign-out-alt" style={{ marginLeft: "15%", marginRight: "8%" }}></i>Logout</Logout></Link>
+                            </LoginProfileSecontion>
+                            : null
+                        }
                         <Menu src={MENU}></Menu>
                     </SectionProfileNot>
                 </Navbar>

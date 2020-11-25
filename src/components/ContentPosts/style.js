@@ -42,7 +42,7 @@ const createPost = styled.div`
     // margin-right:1%;
     margin-left:5%;
     height:130px;
-    width: 42%;
+    width: 38%;
     margin-top:5.5%;
     // border: solid 2px blue;
     background-color:white;
@@ -56,27 +56,31 @@ const imgCreatePost = styled.img`
 
 `
 const addPostField = styled.input`
-        
+        border:none;
+        outline:none;
         margin-left:5%;
         margin-top:5%;
 
 `
 
 const sendButton = styled.img`
-    cursor:pointer;
-    margin-top:30%;
-    margin-left:10%;
+    margin-top:15%;
+    margin-left:15%;
 `
 
-const divSendPost = styled.div`
+const divButtonPost = styled.button`
     width:45px;
     height:45px;
     border-radius:80px;
     background-color:#6E91F6;
-    margin-left:14%;
+    margin-left:25%;
     text-align:center;
-    &:hover ${sendButton}{ 
-        border-color:black;
+    outline:none;
+    cursor:pointer;
+    border:none;
+    // border:1px solid black;
+    &:hover{ 
+        background-color:#6C6CF3;
     }
     
 `
@@ -110,7 +114,7 @@ const postRightSideUp = styled.section`
     margin-top:3.5%;
     margin-left:5%;
     height:auto;
-    width:42%;
+    width:38%;
     background-color:white;
     border-radius:8px;
 `
@@ -123,11 +127,10 @@ const popUpDiv = styled.div`
     background-color:white;
 
 `
-
 export default {
     mainContainerPost, containerPosts,
     contLeftSide, contRightSide, createPost,
-    imgCreatePost, addPostField, divSendPost,
+    imgCreatePost, addPostField, divButtonPost,
     sendButton, postRightSideUp,
     popUpDiv, mainContentPersonalInfo, contentAvatar,
     contentNameUserName, contentShareLike

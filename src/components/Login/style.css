@@ -9,7 +9,7 @@
     /* justify-content: space-evenly; */
 }
 
-input{
+.all-input{
     background-color: transparent;
     width: 200px;
     height: 20px;
@@ -53,12 +53,22 @@ input{
 } 
 
 .sign-up-container{
-    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     /* border: red 2px solid; */
-    height: 100px;
-    width: 300px;
-    margin-bottom: 820px;
-    margin-left: 660px;
+    margin-top: 5%;
+    height: 30%;
+    width: 40%;
+
+}
+
+.containerReg{
+    display: flex;
+    justify-content:flex-end;
+    height:20%;
+    width:100%;
+    /* border: black solid 2px; */
 }
 
 .sign-up-button{

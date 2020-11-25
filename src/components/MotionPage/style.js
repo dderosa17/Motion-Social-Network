@@ -107,6 +107,7 @@ export const DivNotification = styled.div`
 
 export const ImgProfile = styled.img`
     margin-left:20%;
+    cursor:pointer;
 
 `
 
